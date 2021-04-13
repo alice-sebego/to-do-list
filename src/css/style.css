@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Orelega+One&family=Roboto:wght@100&display=swap');
+
+*, ::before, ::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
