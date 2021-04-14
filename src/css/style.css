@@ -5,3 +5,76 @@
     padding: 0;
     margin: 0;
 }
+
+header, footer{
+    padding: 3vh 2vw;
+    text-align: center;
+    font-family: 'Orelega One', Times, serif;
+    background: rgb(27, 128, 223);
+    color: white;
+}
+
+h1{
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+main{
+    width: 65%;
+    margin: 10vh auto 50vh auto;
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: bolder;
+}
+
+form{
+    text-align: center;
+}
+
+input[type="text"]{
+    padding: .5em;
+    border-radius: .3em;
+    border: 1px solid #ccc;
+}
+
+input[type="button"]{
+    padding: .5em;
+    background-color: rgb(27, 128, 223);
+    color: white;
+    border: 1px solid rgb(27, 128, 223);
+    border-radius: .3em;
+}
+
+#recap, #task{
+    margin: 2vh 1vw;
+}
+
+ul{
+    width: 80%;
+    margin: auto;
+    list-style-type: none;
+}
+
+li{
+    background-color: rgba(238, 238, 238, 0.548);
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.deleteTask{
+    color: white;
+    background-color: rgb(200, 50, 0);
+    padding: .3em;
+    border-radius: .3em;
+}
+
+footer{
+    letter-spacing: .05em;
+    line-height: 1.5em;
+}
+
+footer a{
+    color: white;
+    font: bold 0.9em Roboto, Arial, sans-serif;
+}

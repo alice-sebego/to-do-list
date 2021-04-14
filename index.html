@@ -6,11 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
     <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Script -->
     <script defer src="src/js/app.js"></script>
-    <title>Crée ta to-do list</title>
+    <title>Ma to-do list</title>
 </head>
 <body>
-    
+    <header>
+        <h1><i class="fas fa-clipboard-list"></i> Ma to-do list</h1>
+    </header>
+    <main>
+        <form action="">
+            <label for="task">Ajouter une tâche</label>
+            <input type="text" name="task" id="task">
+            <input type="button" value="Ajouter">
+        </form>
+        <section id="list">
+            <div id="recap"></div>
+            <div id="tasks">
+                <ul role="tablist">
+                    <li tabindex="0"><label for="done"><input type="checkbox" name="done" id="done"></label> Acheter du pain <span class="deleteTask"><i class="far fa-times-circle"></i></span></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p><span id="year"></span> To Do List creator | Side project which works with JavaScript</p>
+        <p><i class="fab fa-github"></i> <a href="#" title="Get app's code on GitHub">See code of this app</a> - <i class="fab fa-twitter"></i> <a href="https://twitter.com/ComaMalice" target="_blank" title="Follow us on Twitter">Follow us on Twitter</a></p>
+    </footer>     
 </body>
 </html>
