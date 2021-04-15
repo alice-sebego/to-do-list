@@ -48,6 +48,11 @@ input[type="submit"]{
     text-transform: uppercase;
 }
 
+#info{
+    text-align: center;
+    color: rgb(173, 45, 2);
+}
+
 #recap, #task{
     margin: 2vh 1vw;
 }
@@ -94,10 +99,15 @@ input[type="checkbox"]#done:checked + label{
     margin: 0 1em ;
 }
 
+.taskDone{
+    text-decoration: line-through;
+}
+
 .deleteTask{
     padding: .8em;
     background-color: rgb(173, 45, 2);
     color: white;
+    font-size: .9em;
     border: 1px solid rgb(173, 45, 2);
     border-radius: .3em;
     transition: all 0.3s ease-out;
