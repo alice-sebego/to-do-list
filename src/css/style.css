@@ -42,6 +42,10 @@ input[type="button"]{
     color: white;
     border: 1px solid rgb(27, 128, 223);
     border-radius: .3em;
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: .05em;
+    text-transform: uppercase;
 }
 
 #recap, #task{
@@ -57,16 +61,47 @@ ul{
 li{
     background-color: rgba(238, 238, 238, 0.548);
     padding: 1em;
+    margin: 0.5vh 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+input[type="checkbox"]{
+    display: none;
+}
+
+input[type="checkbox"]#done + label{
+    padding: .5em;
+    border: 1px solid rgb(27, 128, 223);
+    border-radius: .3em;
+    transition: all 0.3s ease-out;
+}
+
+input[type="checkbox"]#done + label::before{
+    content: '\f00c';
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.2em;
+    color: #fff;
+}
+
+input[type="checkbox"]#done:checked + label{
+    background-color: rgb(27, 128, 223);
+}
+
 .deleteTask{
     color: white;
-    background-color: rgb(200, 50, 0);
-    padding: .3em;
+    background-color: rgb(173, 45, 2);
+    padding: .6em;
     border-radius: .3em;
+    transition: all 0.3s ease-out;
+}
+
+.deleteTask:hover,
+.deleteTask:active{
+    background-color: rgb(200, 50, 0);
+    padding: .4em;
+    border-radius: .4em;
 }
 
 footer{
@@ -77,4 +112,8 @@ footer{
 footer a{
     color: white;
     font: bold 0.9em Roboto, Arial, sans-serif;
+}
+
+footer a:hover{
+    font-size: 1em;
 }
