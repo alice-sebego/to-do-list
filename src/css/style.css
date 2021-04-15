@@ -36,7 +36,7 @@ input[type="text"]{
     border: 1px solid #ccc;
 }
 
-input[type="button"]{
+input[type="submit"]{
     padding: .5em;
     background-color: rgb(27, 128, 223);
     color: white;
@@ -94,28 +94,21 @@ input[type="checkbox"]#done:checked + label{
     margin: 0 1em ;
 }
 
-input[type="checkbox"]#deleteTask + label{
-    padding: .5em;
+.deleteTask{
+    padding: .8em;
+    background-color: rgb(173, 45, 2);
+    color: white;
     border: 1px solid rgb(173, 45, 2);
     border-radius: .3em;
     transition: all 0.3s ease-out;
 }
 
-input[type="checkbox"]#deleteTask + label::before{
-    content: '\f00d';
-    font-family: "Font Awesome 5 Free";
-    font-size: 1.2em;
+.deleteTask:hover,
+.deleteTask:active{
+    background-color: white;
     color: rgb(173, 45, 2);
+    border: 1px solid rgb(173, 45, 2);
 }
-
-input[type="checkbox"]#deleteTask:checked + label{
-    background-color: rgb(173, 45, 2);
-}
-
-input[type="checkbox"]#deleteTask:checked + label::before{
-    color: white;
-}
-
 
 footer{
     letter-spacing: .05em;

@@ -19,9 +19,10 @@
         <form action="">
             <label for="task">Ajouter une tâche</label>
             <input type="text" name="task" id="task">
-            <input type="button" value="Ajouter" id="add">
+            <input type="submit" value="Ajouter">
         </form>
         <section id="list">
+            <div id="info"></div>
             <div id="recap"></div>
             <div id="tasks">
                 <ul role="tablist">
@@ -29,8 +30,7 @@
                         <input type="checkbox" name="done" id="done" tabindex="0">
                         <label for="done" tabindex="0"></label> 
                         <span class="description">Acheter du pain</span>
-                        <input type="checkbox" name="deleteTask" id="deleteTask" tabindex="0">
-                        <label for="deleteTask" tabindex="0"></label> 
+                        <button class="deleteTask"><i class="fas fa-times"></i></button> 
                     </li>
                 </ul>
             </div>
