@@ -94,20 +94,28 @@ input[type="checkbox"]#done:checked + label{
     margin: 0 1em ;
 }
 
-.deleteTask{
-    color: white;
-    background-color: rgb(173, 45, 2);
-    padding: .6em;
+input[type="checkbox"]#deleteTask + label{
+    padding: .5em;
+    border: 1px solid rgb(173, 45, 2);
     border-radius: .3em;
     transition: all 0.3s ease-out;
 }
 
-.deleteTask:hover,
-.deleteTask:active{
-    background-color: rgb(200, 50, 0);
-    padding: .4em;
-    border-radius: .4em;
+input[type="checkbox"]#deleteTask + label::before{
+    content: '\f00d';
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.2em;
+    color: rgb(173, 45, 2);
 }
+
+input[type="checkbox"]#deleteTask:checked + label{
+    background-color: rgb(173, 45, 2);
+}
+
+input[type="checkbox"]#deleteTask:checked + label::before{
+    color: white;
+}
+
 
 footer{
     letter-spacing: .05em;
@@ -143,6 +151,13 @@ footer a:hover{
 
 @media (max-width: 400px) {
 
+    h1{
+        font-size: 1.8em;
+    }
+    main{
+        width: 85%;
+    }
+    
     ul{
         width: 100%;
     }
