@@ -18,7 +18,7 @@
     <main>
         <form action="">
             <label for="task">Ajouter une tâche</label>
-            <input type="text" name="task" id="task">
+            <input type="text" name="task" id="task" placeholder="Ajouter une tâche">
             <input type="submit" value="Ajouter">
         </form>
         <section id="list">
@@ -27,7 +27,7 @@
             <div id="tasks">
                 <ul role="tablist">
                     <li tabindex="0">
-                        <input type="checkbox" name="done" id="done" tabindex="0">
+                        <input type="checkbox" name="done" class="done" tabindex="0">
                         <label for="done" tabindex="0"></label> 
                         <span class="description">Acheter du pain</span>
                         <button class="deleteTask"><i class="fas fa-times"></i></button> 

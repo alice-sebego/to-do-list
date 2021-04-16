@@ -76,21 +76,21 @@ input[type="checkbox"]{
     display: none;
 }
 
-input[type="checkbox"]#done + label{
+input[type="checkbox"].done + label{
     padding: .5em;
     border: 1px solid rgb(27, 128, 223);
     border-radius: .3em;
     transition: all 0.3s ease-out;
 }
 
-input[type="checkbox"]#done + label::before{
+input[type="checkbox"].done + label::before{
     content: '\f00c';
     font-family: "Font Awesome 5 Free";
     font-size: 1.2em;
     color: #fff;
 }
 
-input[type="checkbox"]#done:checked + label{
+input[type="checkbox"].done:checked + label{
     background-color: rgb(27, 128, 223);
 }
 
