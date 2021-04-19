@@ -4,15 +4,13 @@ import * as util from './util.js';
 const $form = document.querySelector("form");
 const $inputTask = document.querySelector("#task");
 const $info = document.querySelector("#info");
-const $recap = document.querySelector("#recap");
-
+let $recap = document.querySelector("#recap");
 const $ul = document.querySelector("ul");
-const $done = document.querySelector(".done");
-const $deleteTask = document.querySelector(".deleteTask");
 
 // Array to fill with tasks
 let taskList = [];
 
+// When the user submit his input
 $form.addEventListener("submit", e =>{
 
     e.preventDefault();
@@ -23,6 +21,7 @@ $form.addEventListener("submit", e =>{
 
         createTask(task);
         $form.reset();
+        $recap.innerHTML = `Nombre de tâches à faire : ${taskList.length}`
 
     } else {
 
@@ -33,6 +32,10 @@ $form.addEventListener("submit", e =>{
 
 });
 
+/**
+ * Create a task for the list
+ * @param {string} task 
+ */
 const createTask = (task) =>{
 
     const todo = {
@@ -44,6 +47,10 @@ const createTask = (task) =>{
 
 }
 
+/**
+ * Add the task li on the ul of the DOM
+ * @param {object} todo 
+ */
 const addTask = (todo) =>{
     const $li = document.createElement("li");
     $li.setAttribute("tabindex", "0");
@@ -78,11 +85,19 @@ const addTask = (todo) =>{
     taskList.push($li);
 }
 
-const taskDone = (e) =>{
-    e.target.parentNode.classList.toggle("taskDone");
-}
+/**
+ * Display a task which has done
+ * @param {event} e 
+ * @returns {string} add or remove a class on a element
+ */
+const taskDone = (e) => e.target.parentNode.classList.toggle("taskDone");
 
-const deleteTask = (e) =>{
+
+/**
+ * Delete a task on the list of tasks
+ * @param {event} e 
+ */
+const deleteTask = (e) => {
 
     for(let task of taskList){
         if(e.target.parentNode.getAttribute("data-key") === task.getAttribute("data-key")){
@@ -90,6 +105,7 @@ const deleteTask = (e) =>{
             taskList = taskList.filter(li => li.dataset.key !== task.dataset.key);
         }
     }
-    
+
+    $recap.innerHTML = `Nombre de tâches à faire : ${taskList.length}`
 }
 
