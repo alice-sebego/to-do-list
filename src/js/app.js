@@ -8,10 +8,10 @@ const $recap = document.querySelector("#recap");
 
 const $ul = document.querySelector("ul");
 const $done = document.querySelector(".done");
-const $deleteTask = document.querySelector("#deleteTask");
+const $deleteTask = document.querySelector(".deleteTask");
 
 // Array to fill with tasks
-const taskList = [];
+let taskList = [];
 
 $form.addEventListener("submit", e =>{
 
@@ -60,6 +60,7 @@ const addTask = (todo) =>{
     const $label = document.createElement("label");
     $label.setAttribute("for", todo.id);
     $label.setAttribute("tabindex", "0");
+    $label.addEventListener("click", taskDone);
     $li.appendChild($label);
 
     const $span = document.createElement("span");
@@ -68,16 +69,27 @@ const addTask = (todo) =>{
     $li.appendChild($span);
 
     const $button = document.createElement("button");
-    $button.innerHTML = `<button class="deleteTask"><i class="fas fa-times"></i></button>`;
+    $button.classList.add("deleteTask");
+    $button.innerHTML = `<i class="fas fa-times"></i>`;
+    $button.addEventListener("click", deleteTask);
     $li.appendChild($button);
 
-    $label.addEventListener("click", taskDone);
-    // $deleteTask.addEventListener("click", deleteTask);
     $ul.appendChild($li);
     taskList.push($li);
 }
 
-const taskDone = (e)=>{
+const taskDone = (e) =>{
     e.target.parentNode.classList.toggle("taskDone");
+}
+
+const deleteTask = (e) =>{
+
+    for(let task of taskList){
+        if(e.target.parentNode.getAttribute("data-key") === task.getAttribute("data-key")){
+            task.remove();
+            taskList = taskList.filter(li => li.dataset.key !== task.dataset.key);
+        }
+    }
+    
 }
 
