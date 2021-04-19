@@ -6,6 +6,7 @@ const $inputTask = document.querySelector("#task");
 const $info = document.querySelector("#info");
 let $recap = document.querySelector("#recap");
 const $ul = document.querySelector("ul");
+const $year = document.querySelector("#year");
 
 // Array to fill with tasks
 let taskList = [];
@@ -109,3 +110,5 @@ const deleteTask = (e) => {
     $recap.innerHTML = `Nombre de tâches à faire : ${taskList.length}`
 }
 
+// Set current year on the footer
+util.displayYear($year);
