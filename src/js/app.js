@@ -48,13 +48,30 @@ const addTask = (todo) =>{
     const $li = document.createElement("li");
     $li.setAttribute("tabindex", "0");
     $li.setAttribute("data-key", todo.id);
-    $li.innerHTML = `
-    <input type="checkbox" name="done" class="done" tabindex="0">
-    <label for="done" tabindex="0" class="labelDone"></label> 
-    <span class="description">${todo.task}</span>
-    <button class="deleteTask"><i class="fas fa-times"></i></button> 
-    `;
-    $done.addEventListener("click", taskDone);
+    
+    const $input = document.createElement("input");
+    $input.setAttribute("type", "checkbox");
+    $input.setAttribute("name", "done");
+    $input.setAttribute("tabindex", "0");
+    $input.setAttribute("id", todo.id);
+    $input.classList.add("done");
+    $li.appendChild($input);
+
+    const $label = document.createElement("label");
+    $label.setAttribute("for", todo.id);
+    $label.setAttribute("tabindex", "0");
+    $li.appendChild($label);
+
+    const $span = document.createElement("span");
+    $span.classList.add("description");
+    $span.innerHTML = `${todo.task}`;
+    $li.appendChild($span);
+
+    const $button = document.createElement("button");
+    $button.innerHTML = `<button class="deleteTask"><i class="fas fa-times"></i></button>`;
+    $li.appendChild($button);
+
+    $label.addEventListener("click", taskDone);
     // $deleteTask.addEventListener("click", deleteTask);
     $ul.appendChild($li);
     taskList.push($li);
@@ -63,3 +80,4 @@ const addTask = (todo) =>{
 const taskDone = (e)=>{
     e.target.parentNode.classList.toggle("taskDone");
 }
+
