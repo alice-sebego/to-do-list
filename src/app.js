@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import * as util from './util.js';
 
 // Elements on the DOM
