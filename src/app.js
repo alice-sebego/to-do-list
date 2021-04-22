@@ -23,7 +23,7 @@ $form.addEventListener("submit", e =>{
 
         createTask(task);
         $form.reset();
-        $recap.innerHTML = `Nombre de tâches à faire : ${taskList.length}`
+        $recap.innerHTML = `Nombre de tâche(s) à faire : ${taskList.length}`
 
     } else {
 
